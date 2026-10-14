@@ -30,9 +30,11 @@ img{-webkit-user-drag:none;user-select:none}
 .startCard{position:relative;background:var(--paper);border-radius:28px;padding:22px 22px 26px;width:min(860px,94vw);margin:16px auto;box-shadow:0 8px 0 var(--shadow),0 10px 30px rgba(0,0,0,.12);text-align:center;max-height:94dvh;overflow:auto}
 .title{font-size:clamp(28px,5.4vw,50px);margin:4px 0 0;color:#ff7aa2;text-shadow:3px 3px 0 #fff,5px 5px 0 #ffd6e2;letter-spacing:1px}
 .subtitle{font-size:clamp(14px,2.2vw,20px);color:var(--ink2);margin:6px 0 14px}
-.charGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px;margin:12px 0}
+.charGrid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:12px auto;max-width:640px}
+.charGrid .charPick{flex:0 0 calc((100% - 40px) / 5);min-width:0}
+@media (max-width:560px){.charGrid .charPick{flex-basis:calc((100% - 20px) / 3)}}
 .charPick{background:#fff;border:3px solid var(--line);border-radius:18px;padding:6px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:15px}
-.charPick img{height:76px;width:76px;object-fit:contain}
+.charPick img{height:76px;width:76px;max-width:100%;object-fit:contain}
 .charPick.on{border-color:var(--pink2);background:#fff0f4;transform:translateY(-3px)}
 .nameIn{font-family:inherit;font-size:22px;padding:10px 14px;border-radius:14px;border:3px solid var(--line);width:min(320px,80vw);text-align:center;color:var(--ink);background:#fff;outline:none}
 .nameIn:focus{border-color:var(--pink2)}
